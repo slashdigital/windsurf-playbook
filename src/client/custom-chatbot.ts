@@ -1,5 +1,8 @@
 import * as React from 'react';
 import { createRoot, type Root } from 'react-dom/client';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import rehypeSanitize from 'rehype-sanitize';
 
 import '../css/custom-chatbot.css';
 
@@ -379,7 +382,20 @@ function CustomChatbotWidget(): React.ReactElement {
                         ? 'customChatbotMsgUser'
                         : 'customChatbotMsgBot'),
                   },
-                  m.text,
+                  m.role === 'bot'
+                    ? React.createElement(
+                        'div',
+                        { className: 'customChatbotMarkdown' },
+                        React.createElement(
+                          ReactMarkdown as any,
+                          {
+                            remarkPlugins: [remarkGfm],
+                            rehypePlugins: [rehypeSanitize],
+                          } as any,
+                          m.text,
+                        ),
+                      )
+                    : m.text,
                 ),
               )
               .concat(

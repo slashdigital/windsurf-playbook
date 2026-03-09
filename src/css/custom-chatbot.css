@@ -313,13 +313,67 @@
 }
 
 .customChatbotMsg {
-  max-width: 85%;
+  max-width: 100%;
   padding: 10px 12px;
-  border-radius: 18px;
-  line-height: 1.5;
-  font-size: 0.95rem;
+  border-radius: 14px;
+  font-size: 14px;
+  line-height: 1.35;
+  white-space: pre-wrap;
   word-break: break-word;
-  border: 1px solid transparent;
+}
+
+.customChatbotMarkdown {
+  white-space: normal;
+}
+
+.customChatbotMarkdown > :first-child {
+  margin-top: 0;
+}
+
+.customChatbotMarkdown > :last-child {
+  margin-bottom: 0;
+}
+
+.customChatbotMarkdown p {
+  margin: 0.5rem 0;
+}
+
+.customChatbotMarkdown ul,
+.customChatbotMarkdown ol {
+  margin: 0.5rem 0 0.5rem 1.25rem;
+  padding: 0;
+}
+
+.customChatbotMarkdown li {
+  margin: 0.25rem 0;
+}
+
+.customChatbotMarkdown a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.customChatbotMarkdown code {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.9em;
+  background: rgba(0, 0, 0, 0.08);
+  padding: 0.1em 0.3em;
+  border-radius: 6px;
+}
+
+.customChatbotMarkdown pre {
+  margin: 0.5rem 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.customChatbotMarkdown pre code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-size: 0.85em;
 }
 
 .customChatbotMsgUser {
