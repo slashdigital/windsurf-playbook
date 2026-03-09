@@ -37,6 +37,11 @@ const config: Config = {
     defaultLocale: "en",
     locales: ["en"],
   },
+
+  clientModules: [
+    require.resolve("./src/client/custom-chatbot.ts"),
+  ],
+
   presets: [
     [
       "classic",
