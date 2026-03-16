@@ -1,5 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 import styles from './styles.module.css';
+import contributorsData from '../../data/contributors.json';
 
 interface Contributor {
   name: string;
@@ -8,32 +9,7 @@ interface Contributor {
   github?: string;
 }
 
-const contributors: Contributor[] = [
-  {
-    name: 'Sunhak Hout',
-    title: 'Tech Lead',
-    avatar: 'https://github.com/sunhak-slash.png',
-    github: 'sunhak-slash',
-  },
-  {
-    name: 'Banly Tong',
-    title: 'Software Engineer',
-    avatar: 'https://github.com/banlyslash.png',
-    github: 'banlyslash',
-  },
-  {
-    name: 'Kevin',
-    title: 'Principal Developer',
-    avatar: 'https://github.com/kevinslashdigital.png',
-    github: 'kevinslashdigital',
-  },
-  {
-    name: 'Achmad Jamaludin',
-    title: 'Software Engineer',
-    avatar: 'https://github.com/amalari.png',
-    github: 'amalari',
-  },
-];
+const contributors = contributorsData as unknown as Contributor[];
 
 export default function Contributors(): React.ReactElement {
   return (
